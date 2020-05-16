@@ -93,6 +93,12 @@ public class Array<E> {
         return last;
     }
 
+    public E removeFirst(){
+       E first =  data[0];
+       data[0] = null;
+       return first;
+    }
+
     public E get(int index) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("Get failed");
