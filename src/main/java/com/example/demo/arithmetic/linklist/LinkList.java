@@ -6,7 +6,6 @@ package com.example.demo.arithmetic.linklist;
  * @Auther: tangbingqun
  * @Date: 2020/4/28 3:46 PM
  */
-
 public class LinkList<E> {
     //单向链表的结构
     private class Node {
@@ -53,6 +52,7 @@ public class LinkList<E> {
         for (int i = 0; i < index; i++) {
             prev = prev.next;
         }
+
         prev.next = new Node(e, prev.next);
         size++;
     }
@@ -65,8 +65,6 @@ public class LinkList<E> {
         add(size, e);
     }
 
-
-
     public E get(int index){
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("all failed");
@@ -77,7 +75,6 @@ public class LinkList<E> {
         }
         return  prev.e;
     }
-
 
     public void set (int index, E e){
         if (index < 0 || index > size) {
@@ -90,7 +87,6 @@ public class LinkList<E> {
         cur.e = e;
     }
 
-
     public Boolean contains(E e){
         Node cur = dummyHead.next;
         while (cur != null){
@@ -101,9 +97,5 @@ public class LinkList<E> {
         }
         return false;
     }
-
-
-
-
 
 }

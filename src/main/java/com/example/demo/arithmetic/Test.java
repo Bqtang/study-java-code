@@ -14,7 +14,6 @@ public class Test {
 
     public static void main(String[] args) {
 
-
         Array[] arrays = new Array[1];
 
         ArrayList arrayList = new ArrayList();
