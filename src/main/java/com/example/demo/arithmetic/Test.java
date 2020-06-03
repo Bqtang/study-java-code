@@ -16,7 +16,7 @@ public class Test {
 
         Array[] arrays = new Array[1];
 
-        ArrayList arrayList = new ArrayList();
+
 
 
     }

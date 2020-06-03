@@ -5,37 +5,38 @@ import com.example.demo.arithmetic.stack.Stack;
 import java.util.LinkedList;
 
 /**
- * @Description:
+ * @Description: 链表实现栈
  * @Auther: tangbingqun
  * @Date: 2020/5/15 9:09 AM
  */
 
 public class LinkedListStack<E> implements Stack<E> {
 
-    private LinkedList<E>  list;
+    private LinkedList<E> list;
 
     @Override
     public int getSize() {
-        return 0;
+        return list.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return list.isEmpty();
     }
 
     @Override
     public void push(E e) {
+        list.addLast(e);
 
     }
 
     @Override
     public E pop() {
-        return null;
+        return list.removeLast();
     }
 
     @Override
     public E peek() {
-        return null;
+        return list.getLast();
     }
 }
