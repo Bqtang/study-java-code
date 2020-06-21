@@ -17,7 +17,7 @@ import java.util.TreeSet;
  *   我们可以不考虑输出结果的顺序。
  */
 
-public class Practice_349 {
+public class Practice_349_array {
     public static int[] intersection(int[] nums1, int[] nums2) {
         TreeSet set = new TreeSet<>();
         for (int num : nums1) {
