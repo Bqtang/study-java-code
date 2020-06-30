@@ -9,7 +9,6 @@ import java.util.TreeMap;
  */
 
 public class Trie {
-
     private class Node{
         boolean  isWord;
         TreeMap<Character, Node> next;
