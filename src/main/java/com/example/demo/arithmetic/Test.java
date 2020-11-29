@@ -1,8 +1,8 @@
 package com.example.demo.arithmetic;
 
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.*;
+
 
 /**
  * @Description:
@@ -13,11 +13,6 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) {
-
-        Array[] arrays = new Array[1];
-
-
-
 
     }
 

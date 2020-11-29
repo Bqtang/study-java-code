@@ -1,5 +1,7 @@
 package com.example.demo.stream;
 
+import org.springframework.util.StringUtils;
+
 /**
  * @Description:
  * @Auther: tangbingqun
@@ -9,9 +11,10 @@ package com.example.demo.stream;
 
 public class User {
 
-    private String  name;
+    public static void main(String[] args) {
 
-    private Integer age;
+    }
+
 
 
 

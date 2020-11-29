@@ -1,7 +1,7 @@
 package com.example.demo.arithmetic.redBlackTree;
 
 /**
- * @Description:
+ * @Description:  红黑树
  * @Auther: tangbingqun
  * @Date: 2020/6/29 8:20 AM
  */
@@ -74,7 +74,6 @@ public class RBTree<K extends Comparable<K>, V> {
             flipColors(node);
 
         }
-
         return node;
     }
 
