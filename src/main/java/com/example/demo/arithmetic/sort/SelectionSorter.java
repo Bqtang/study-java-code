@@ -19,6 +19,7 @@ public class SelectionSorter extends Sort {
 
           for (int i = 0; i < data.length; i++) {
                int minNumIndex = i;
+               //选择最小的元素往后进行排序操作
                for (int j = i + 1; j < data.length; j++) {
                     if (data[minNumIndex] > data[j]) {
                          minNumIndex = j;
@@ -33,8 +34,6 @@ public class SelectionSorter extends Sort {
           int[] data = new int[]{12, 23, 36, 9, 24, 42};
           new SelectionSorter().sort(data);
           System.out.println("获取：" + JSON.toJSONString(data));
-
-
      }
 
 }

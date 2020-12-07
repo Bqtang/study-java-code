@@ -22,19 +22,20 @@ public class ValidBracket {
                put('}', '{');
           }};
 
+
           Stack<Character> stack = new Stack<>();
           for (Character c : s.toCharArray()) {
                if (pairs.containsKey(c)) {
-                    if (stack.isEmpty() || !stack.peek().equals(pairs.get(c))) {
+                    if (stack.isEmpty() || !stack.pop().equals(pairs.get(c))) {
                          return false;
                     }
                } else {
                     stack.push(c);
                }
           }
-
           return stack.isEmpty();
      }
+
 
      public static void main(String[] args) {
           boolean valid1 = new ValidBracket().isValidV2("()");
