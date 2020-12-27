@@ -3,10 +3,7 @@ package com.example.demo.stream;
 import com.alibaba.fastjson.JSON;
 
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,18 +17,18 @@ public class ListStream {
 
     public static void main(String[] args) {
 
-        List<String>  names = Stream.of("").collect(Collectors.toList());
+        String   str = new String("1");
 
-        System.out.println("获取相关的值：" + JSON.toJSONString(names));
+        String  testStr = str + "1";
+        System.out.println(testStr);
 
-        List<Integer>  sorts = Stream.of(6,4,1,10).collect(Collectors.toList());
+        StringBuilder   builder = new StringBuilder();
+        StringBuilder append = builder.append("1").append("1").append("1");
+        System.out.println(append);
 
-        Integer  min = sorts.stream().min(Comparator.comparing(o -> o.intValue())).get();
-
-        names =  null;
-
-        List<String> list = Optional.ofNullable(names).orElse(new ArrayList<>());
-        System.out.println("问题："+ JSON.toJSONString(list));
+        StringBuffer  buffer = new StringBuffer();
+        StringBuffer append1 = buffer.append("1").append("2").append("1");
+        System.out.println(append1);
 
 
     }
