@@ -3,7 +3,7 @@ package com.example.demo.arithmetic.sort;
 import com.alibaba.fastjson.JSON;
 
 /**
- * @Description: 归并排序
+ * @Description:  递归进行--归并排序
  * @Auther: tangbingqun
  * @Date: 2020/12/12 9:36 AM
  */
