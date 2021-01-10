@@ -7,9 +7,9 @@ import com.alibaba.fastjson.JSON;
  * @DateTime: 2020/12/27 2:06 PM
  * @Description: 三路排序法。
  */
-public class ThreeWayQuickSorter extends Sort {
+public class ThreeWayQuickSorter  {
 
-    private class PartitionSegment {
+    public class PartitionSegment {
         public int less;
         public int great;
 
@@ -19,22 +19,18 @@ public class ThreeWayQuickSorter extends Sort {
         }
     }
 
-
     public void sort(int[] data) {
         if (data == null || data.length <= 1) {
             return;
         }
 
         sort(data, 0, data.length);
-
     }
 
     private void sort(int[] data, int lo, int hi) {
-
         if (lo >= hi) {
             return;
         }
-
         PartitionSegment partitionSegment = partition(data, lo, hi);
         int less = partitionSegment.less;
         int great = partitionSegment.great;
@@ -44,7 +40,13 @@ public class ThreeWayQuickSorter extends Sort {
 
     }
 
-    private PartitionSegment partition(int[] data, int lo, int hi) {
+    public void swap(int[] data, int i, int j) {
+        int tmp = data[i];
+        data[i] = data[j];
+        data[j] = tmp;
+    }
+
+    public PartitionSegment partition(int[] data, int lo, int hi) {
         int pivot = data[hi];
         int less = lo;
         int great = hi;
@@ -71,7 +73,7 @@ public class ThreeWayQuickSorter extends Sort {
 
 
     public static void main(String[] args) {
-        int[] data = new int[]{12, 23, 36, 9, 24, 20,1};
+        int[] data = new int[]{12, 23, 36, 9, 24, 20,1,23,8,23,99};
         new QuickerSorter().sort(data);
         System.out.println(JSON.toJSONString(data));
 
