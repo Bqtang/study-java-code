@@ -38,77 +38,78 @@ import com.example.demo.arithmetic.sort.Sort;
 
 public class LargestNum_179 extends Sort {
 
-     //排序
-     class PartitionSegment {
-          private int less;
-          private int great;
+    //排序
+    class PartitionSegment {
+        private int less;
+        private int great;
 
-          public PartitionSegment(int less, int great) {
-               this.less = less;
-               this.great = great;
-          }
-     }
-     /**
-      * 实现三路快排
-      *
-      * @param data
-      */
-     public String threeWayQuickSorter(int[] data) {
+        public PartitionSegment(int less, int great) {
+            this.less = less;
+            this.great = great;
+        }
+    }
 
-          sort(data, 0, data.length - 1);
-          if (data[0] == 0) {
-               return "0";
-          }
-          StringBuilder str = new StringBuilder();
-          for (int i : data){
-               str.append(i);
-          }
-          return str.toString();
-     }
+    /**
+     * 实现三路快排
+     *
+     * @param data
+     */
+    public String threeWayQuickSorter(int[] data) {
 
-
-     private void sort(int[] data, int lo, int hi) {
-          if (lo >= hi) {
-               return;
-          }
-
-          PartitionSegment partitionSegment = partition(data, lo, hi);
-          int less = partitionSegment.less;
-          int great = partitionSegment.great;
-
-          sort(data, lo, less -1 );
-          sort(data, great +1, hi);
-     }
+        sort(data, 0, data.length - 1);
+        if (data[0] == 0) {
+            return "0";
+        }
+        StringBuilder str = new StringBuilder();
+        for (int i : data) {
+            str.append(i);
+        }
+        return str.toString();
+    }
 
 
-     private PartitionSegment partition(int[] data, int lo, int hi) {
-          //定义指针
-          int pivot = data[hi];
-          int less = lo;
-          int great = hi;
-          int i = lo;
+    private void sort(int[] data, int lo, int hi) {
+        if (lo >= hi) {
+            return;
+        }
 
-          while (i <= great) {
-               String xy = data[i] + "" + pivot;
-               String yx = pivot + "" + data[i];
-               if (xy.compareTo(yx) > 0) {
-                    swap(data, i, less);
-                    less++;
-                    i++;
-               } else if (xy.compareTo(yx) < 0) {
-                    swap(data, i, great);
-                    great--;
-               } else {
-                    i++;
-               }
-          }
-          return new PartitionSegment(less, great);
-     }
+        PartitionSegment partitionSegment = partition(data, lo, hi);
+        int less = partitionSegment.less;
+        int great = partitionSegment.great;
 
-     public static void main(String[] args) {
-          int[] data = new int[]{3,30,34,5,9};
-          System.out.println(new LargestNum_179().threeWayQuickSorter(data));
+        sort(data, lo, less - 1);
+        sort(data, great + 1, hi);
+    }
 
-     }
+
+    private PartitionSegment partition(int[] data, int lo, int hi) {
+        //定义指针
+        int pivot = data[hi];
+        int less = lo;
+        int great = hi;
+        int i = lo;
+
+        while (i <= great) {
+            String xy = data[i] + "" + pivot;
+            String yx = pivot + "" + data[i];
+            if (xy.compareTo(yx) > 0) {
+                swap(data, i, less);
+                less++;
+                i++;
+            } else if (xy.compareTo(yx) < 0) {
+                swap(data, i, great);
+                great--;
+            } else {
+                i++;
+            }
+        }
+        return new PartitionSegment(less, great);
+    }
+
+    public static void main(String[] args) {
+        int[] data = new int[]{3, 30, 34, 5, 9};
+        System.out.println(new LargestNum_179().threeWayQuickSorter(data));
+
+    }
 
 }
