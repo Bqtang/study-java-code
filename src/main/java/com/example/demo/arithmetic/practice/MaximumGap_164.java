@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @Author: tbq
  * @DateTime: 2021/1/12 9:13 PM
- * @Description:
+ * @Description: 最大间距
  */
 public class MaximumGap_164 {
     public int maximumGap(int[] nums) {

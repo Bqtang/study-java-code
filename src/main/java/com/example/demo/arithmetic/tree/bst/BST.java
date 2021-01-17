@@ -48,7 +48,7 @@ public class BST<E extends Comparable> {
                     curr.left = new TreeNode(e);
                     size++;
                     return;
-                } else (e.compareTo(curr.data) > 0 && curr.right == null) {
+                } else if (e.compareTo(curr.data) > 0 && curr.right == null) {
                     curr.right = new TreeNode(e);
                     size++;
                     return;
