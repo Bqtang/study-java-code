@@ -144,15 +144,4 @@ public class IterationTreeNode<E> {
           return result;
      }
 
-     /**
-      * 层序遍历分层。
-      * @param root
-      * @return
-      */
-     public static List<List<Integer>>  levelOrder_2(TreeNode<Integer> root){
-          List<List<Integer>>  result = new ArrayList<>();
-
-
-          return result;
-     }
 }
