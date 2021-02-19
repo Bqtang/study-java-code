@@ -1,5 +1,8 @@
 package com.example.demo.spring;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @Description:
  * @Auther: tangbingqun
@@ -7,4 +10,9 @@ package com.example.demo.spring;
  */
 
 public class Test {
+
+     public static void main(String[] args) {
+
+          Lock  lock = new ReentrantLock();
+     }
 }

@@ -42,6 +42,7 @@ public class BST<E extends Comparable> {
           } else {
                TreeNode curr = root;
                while (curr != null) {
+                    //将节点e 插入到以curr 为根节点的子树当中。
                     if (e.compareTo(curr.data) == 0) {
                          return;
                     } else if (e.compareTo(curr.data) < 0 && curr.left == null) {
