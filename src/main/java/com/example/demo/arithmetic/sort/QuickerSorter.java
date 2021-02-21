@@ -48,9 +48,9 @@ public class QuickerSorter extends Sort {
             }
         }
         swap(data, less, great);
-
         return less;
     }
+
 
     public static void main(String[] args) {
         int[] data = new int[]{12, 23, 36, 9, 24, 20};

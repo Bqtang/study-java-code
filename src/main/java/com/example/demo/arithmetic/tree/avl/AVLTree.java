@@ -1,5 +1,7 @@
 package com.example.demo.arithmetic.tree.avl;
 
+import java.util.List;
+
 /**
  * @Description: AVL树
  * @Auther: tangbingqun
@@ -30,7 +32,6 @@ public class AVLTree<E extends Comparable> {
           if (node == null) {
                return 0;
           }
-
           return node.height;
      }
 
@@ -41,23 +42,30 @@ public class AVLTree<E extends Comparable> {
      }
 
      //将节点e 插入到以 note 节点的子树当中
-     private TreeNode add(TreeNode note, E e) {
-          if (note == null) {
+     private TreeNode add(TreeNode node, E e) {
+          if (node == null) {
                size++;
                return new TreeNode(e);
           }
-          if (e.compareTo(note.data) < 0) {
-               return add(note.left, e);
+          if (e.compareTo(node.data) < 0) {
+               return add(node.left, e);
           }
-          if (e.compareTo(note.data) > 0) {
-               return add(note.right, e);
+          if (e.compareTo(node.data) > 0) {
+               return add(node.right, e);
           }
           //更新父亲节点的高度值
           //父亲节点的高度值等于左右子节点最大的高度值加上1
-          note.height = Math.max(getHeight(note.left), getHeight(note.right)) + 1;
+          node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+
+          //计算每一个父亲节点的平衡因子
+          int balanceFactor = getBalanceFactor(node);
+          //平衡二叉树判断条件。
+          if (Math.abs(balanceFactor) > 1) {
+               System.out.println("当前的二叉树不是平衡二叉树，平衡因子为：" + balanceFactor);
+          }
 
 
-          return note;
+          return node;
      }
 
      //使用递归查询查询元素。
@@ -87,5 +95,77 @@ public class AVLTree<E extends Comparable> {
           node.left = leftRoot;
           return node;
      }
+
+     /**
+      * 获取节点的平衡因子（平衡因子）
+      *
+      * @param node
+      * @return
+      */
+     private int getBalanceFactor(TreeNode node) {
+          if (node == null) {
+               return 0;
+          }
+          //平衡因子等于左右子节点的高度差
+          return getHeight(node.left) - getHeight(node.right);
+     }
+
+
+     /**
+      * 判断一棵二叉树是否是二叉树
+      *
+      * @return
+      */
+     public boolean isBST() {
+          //2.先中序遍历二叉查找树，得到遍历的结果列表
+          List<E> res = inOrder();
+          int len = res.size();
+          if (len <= 1) {
+               return true;
+          }
+          //然后判断结果列表是否是增序排列的。
+          //中序遍历  判断结果列表是不是增序的。
+          for (int i = 1; i < len; i++) {
+               if (res.get(i).compareTo(res.get(i - 1)) < 0) {
+                    return false;
+               }
+          }
+          return true;
+     }
+
+     /**
+      * 判断一棵树是否平衡
+      *
+      * @return
+      */
+     public boolean isBalanced() {
+          return isBalanced(root);
+     }
+
+
+     private boolean isBalanced(TreeNode node) {
+          if (node == null) {
+               return true;
+          }
+          int balanceFactor = getBalanceFactor(node);
+          if (Math.abs(balanceFactor) > 1) {
+               return false;
+          }
+          return isBalanced(node.left) && isBalanced(node.right);
+     }
+
+
+
+
+     /**
+      * 二叉树的中序遍历
+      *
+      * @return
+      */
+     private List<E> inOrder() {
+
+          return null;
+     }
+
 
 }

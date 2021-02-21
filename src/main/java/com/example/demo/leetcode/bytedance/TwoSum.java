@@ -23,9 +23,12 @@ import java.util.Map;
  * 所以返回 [0, 1]
  *
  *
+ * 时间复杂度为 O(n)
+ *
  */
 public class TwoSum {
 
+    //返回数组的下标
     public int[] twoSum(int[] nums, int target) {
         int len = nums.length;
         Map<Integer, Integer> tempMap = new HashMap(len - 1);
@@ -38,6 +41,32 @@ public class TwoSum {
         }
         return new int[]{};
     }
+
+
+    /**
+     * 添加二维数组。
+     * @param a
+     * @param target
+     * @return
+     */
+    public int[][] addElement(int[] a, int target ){
+        int k = 0;
+        int len = a.length;
+        int res[][] = new int[1][len];
+        Map<Integer, Integer> tempMap = new HashMap<>(len - 1);
+        for (int i = 0; i < len; i++){
+            int another = target - a[i];
+            if (tempMap.containsKey(another)){
+                res[k][0] =another;
+                res[k][1]= tempMap.get(another);
+                k ++;
+            }
+            tempMap.put(another,a[i]);
+        }
+        return res;
+
+    }
+
 
 
 }
