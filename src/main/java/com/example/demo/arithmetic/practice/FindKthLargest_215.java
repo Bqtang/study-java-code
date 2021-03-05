@@ -1,9 +1,5 @@
 package com.example.demo.arithmetic.practice;
 
-import com.alibaba.fastjson.JSON;
-import com.example.demo.arithmetic.sort.QuickerSorter;
-
-import java.util.Arrays;
 import java.util.Random;
 
 /**

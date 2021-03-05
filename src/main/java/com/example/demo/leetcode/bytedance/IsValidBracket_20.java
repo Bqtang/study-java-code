@@ -39,7 +39,7 @@ import java.util.Stack;
  * 输入: "{[]}"
  * 输出: true
  */
-public class IsValidBracket {
+public class IsValidBracket_20 {
 
     public boolean isValid(String s) {
         int len = s.length();
@@ -54,7 +54,6 @@ public class IsValidBracket {
             put('}', '{');
             put(']', '[');
         }};
-
         Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < len; i++) {
             char c = s.charAt(i);
@@ -69,5 +68,58 @@ public class IsValidBracket {
             }
         }
         return stack.isEmpty();
+    }
+
+
+
+    /**
+     * 有效括号
+     * 时间复杂度： O(n)
+     * 空间复杂度: O(n)
+     * @param s
+     * @return
+     */
+    public static boolean isValid_1(String s){
+        if (s == null) {
+            return true;
+        }
+        Stack<Character>  stack = new Stack<>();
+        for (char c : s.toCharArray()){
+            if (c == ' '){
+                continue;
+            }
+
+            if (c == '(' || c == '{' || c == '['){
+                stack.push(c);
+
+            } else {
+                if (stack.isEmpty()){
+                    return false;
+                }
+                char topElement = stack.pop();
+                char matched = '#';
+
+                if (c == ')'){
+                    matched = '(';
+                } else if(c == '}'){
+                    matched = '{';
+                }else{
+                    matched = '[';
+                }
+
+                if (topElement  !=  matched){
+                    return  false;
+                }
+            }
+        }
+        return stack.isEmpty();
+
+    }
+
+    public static void main(String[] args) {
+        String  s = "{[]}";
+        boolean valid_1 = isValid_1(s);
+        System.out.println(valid_1);
+
     }
 }
