@@ -1,7 +1,7 @@
 package com.example.demo.arithmetic.tree.bst;
 
 /**
- * @Description: 递归实现二叉树 （插入, 查询，）
+ * @Description: 递归实现二叉树 （插入, 查询）
  * @Auther: tangbingqun
  * @Date: 2021/2/10 10:38 AM
  */
