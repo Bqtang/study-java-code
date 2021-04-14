@@ -35,7 +35,7 @@ public class ShowMeBug {
                if (tree.containsKey(parentId)) {
                     tree.get(parentId).add(node);
                } else {
-                    List<Node> children = new ArrayList<>();
+                    List<Node> children = new ArrayList<Node>();
                     children.add(node);
                     tree.put(parentId, children);
                }

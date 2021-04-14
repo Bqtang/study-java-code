@@ -1,6 +1,6 @@
 package com.example.demo.arithmetic.tree.recursion;
 
-import com.alibaba.fastjson.JSON;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +14,12 @@ import java.util.List;
 public class RecursionTreeNode<E> {
 
      public static void main(String[] args) {
-          TreeNode<Integer> root = new TreeNode<>(23);
-          TreeNode<Integer> note1 = new TreeNode<>(34);
-          TreeNode<Integer> note2 = new TreeNode<>(21);
-          TreeNode<Integer> note3 = new TreeNode<>(45);
-          TreeNode<Integer> note4 = new TreeNode<>(99);
-          TreeNode<Integer> note5 = new TreeNode<>(90);
+          TreeNode<Integer> root = new TreeNode<Integer>(23);
+          TreeNode<Integer> note1 = new TreeNode<Integer>(34);
+          TreeNode<Integer> note2 = new TreeNode<Integer>(21);
+          TreeNode<Integer> note3 = new TreeNode<Integer>(45);
+          TreeNode<Integer> note4 = new TreeNode<Integer>(99);
+          TreeNode<Integer> note5 = new TreeNode<Integer>(90);
 
           root.left = note1;
           root.right = note2;
@@ -37,9 +37,9 @@ public class RecursionTreeNode<E> {
       * @param root
       */
      public static void preOrderR(TreeNode<Integer> root) {
-          List<Integer> result = new ArrayList<>();
+          List<Integer> result = new ArrayList<Integer>();
           preOrder(root, result);
-          System.out.println(JSON.toJSONString(result));
+          System.out.println(result);
      }
 
      public static void preOrder(TreeNode<Integer> root, List<Integer> result){
@@ -50,6 +50,9 @@ public class RecursionTreeNode<E> {
           preOrder(root.left, result);
           preOrder(root.right, result);
      }
+
+
+
 
 
 }

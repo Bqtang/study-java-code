@@ -12,7 +12,7 @@ public class IterationTreeNode<E> {
 
 
      public static void main(String[] args) {
-          TreeNode<Integer> root = new TreeNode<>(23);
+         /* TreeNode<Integer> root = new TreeNode<>(23);
           TreeNode<Integer> note1 = new TreeNode<>(34);
           TreeNode<Integer> note2 = new TreeNode<>(21);
           TreeNode<Integer> note3 = new TreeNode<>(45);
@@ -25,7 +25,7 @@ public class IterationTreeNode<E> {
           note1.left = note4;
           note1.right = note5;
 
-          note2.right = note3;
+          note2.right = note3;*/
 
      }
 
@@ -36,12 +36,12 @@ public class IterationTreeNode<E> {
       * @return
       */
      public static List<Integer> preOrder(TreeNode<Integer> root) {
-          List<Integer> result = new ArrayList<>();
+          List<Integer> result = new ArrayList<Integer>();
           if (root == null) {
                return result;
           }
 
-          Stack<TreeNode<Integer>> stack = new Stack<>();
+          Stack<TreeNode<Integer>> stack = new Stack<TreeNode<Integer>>();
           stack.push(root);
           while (!stack.isEmpty()) {
                TreeNode<Integer> curr = stack.pop();
@@ -53,7 +53,6 @@ public class IterationTreeNode<E> {
                if (curr.left != null) {
                     stack.push(curr.left);
                }
-
           }
           return result;
      }
@@ -67,11 +66,11 @@ public class IterationTreeNode<E> {
       */
      public static List<Integer> inOrder(TreeNode<Integer> root) {
 
-          List<Integer> result = new ArrayList<>();
+          List<Integer> result = new ArrayList<Integer>();
           if (root == null) {
                return result;
           }
-          Stack<TreeNode<Integer>> stack = new Stack<>();
+          Stack<TreeNode<Integer>> stack = new Stack<TreeNode<Integer>>();
           TreeNode<Integer> curr = root;
           while (curr != null || !stack.isEmpty()) {
                while (curr != null) {
@@ -99,7 +98,7 @@ public class IterationTreeNode<E> {
       * @return
       */
      public static List<Integer> postOrder(TreeNode<Integer> root) {
-          LinkedList<Integer> result = new LinkedList<>();
+          LinkedList<Integer> result = new LinkedList<Integer>();
           if (root == null) {
                return result;
           }
@@ -125,11 +124,11 @@ public class IterationTreeNode<E> {
       * @return
       */
      public static List<Integer> levelOrder(TreeNode<Integer> root) {
-          List<Integer> result = new ArrayList<>();
+          List<Integer> result = new ArrayList<Integer>();
           if (root == null) {
                return result;
           }
-          Queue<TreeNode<Integer>> queue = new LinkedList<>();
+          Queue<TreeNode<Integer>> queue = new LinkedList<TreeNode<Integer>>();
           queue.offer(root);
           while (!queue.isEmpty()) {
                TreeNode<Integer> curr = queue.poll();
